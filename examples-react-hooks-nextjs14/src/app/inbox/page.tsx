@@ -5,10 +5,15 @@ import React from 'react';
 
 import HomeComponent from '../../components/home';
 
+ function getItemFromLocalStorage(key: string) {
+  if (typeof window === 'undefined') return '';
+  return localStorage.getItem(key);
+}
+
 export default function Inbox() {
-   const apiKey = localStorage.getItem('apiKey');
-   const userId = localStorage.getItem('userId');
-   const baseUrl = localStorage.getItem('baseUrl');
+   const apiKey = getItemFromLocalStorage('apiKey');
+   const userId = getItemFromLocalStorage('userId')
+   const baseUrl = getItemFromLocalStorage('baseUrl')
 
    return (
       <>

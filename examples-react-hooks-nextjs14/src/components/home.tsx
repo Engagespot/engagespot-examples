@@ -33,7 +33,7 @@ const HomeComponent = () => {
       <main className='flex relative min-h-screen flex-col items-center justify-between'>
          <Button
             onClick={() => {
-               localStorage.clear();
+               typeof window !== 'undefined' && localStorage.clear();
                router.push('/');
             }}
             className='absolute top-5 right-8'

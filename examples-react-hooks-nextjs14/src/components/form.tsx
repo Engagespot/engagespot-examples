@@ -48,7 +48,7 @@ export function SigninForm() {
 
   function createNewDevice() {
     if (typeof window !== 'undefined') {
-      const savedId = localStorage.getItem('_engagespotDeviceId');
+      const savedId = typeof window === 'undefined' ? '' : localStorage.getItem('_engagespotDeviceId');
       if (savedId) return savedId;
     }
 
