@@ -1,49 +1,50 @@
 import {
   type EngagespotNotification,
   useEvent,
-  useInstance,
+  useWebPush,
+  useActions,
   usePreferences,
-  useScrollableFeed,
+  useFeed,
   useUnreadCount,
-} from '@engagespot/react-hooks';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
-import { useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
+} from "@engagespot/react-hooks";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import clsx from "clsx";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
-import { NotificationsInifiniteScroll } from './components/InifiniteScroll';
-import { Popper } from './components/Popper';
-import { PreferenceChannels } from './components/PreferenceChannel';
-import { sendTestNotification } from './helpers';
-import { Bookmark } from './icons/Bookmark';
-import { Notification } from './icons/Notification';
-import { Profile } from './icons/Profile';
-import { useCurrentUser, useSetCurrentUser } from './providers/UserProvider';
+import { NotificationsInifiniteScroll } from "./components/InifiniteScroll";
+import { Popper } from "./components/Popper";
+import { PreferenceChannels } from "./components/PreferenceChannel";
+import { sendTestNotification } from "./helpers";
+import { Bookmark } from "./icons/Bookmark";
+import { Notification } from "./icons/Notification";
+import { Profile } from "./icons/Profile";
+import { useCurrentUser, useSetCurrentUser } from "./providers/UserProvider";
 
 const notify = (notification: EngagespotNotification) =>
   toast.success(`New Notification: ${notification.title}`);
 
 function App() {
-  const { notifications, loading, loadMore, refresh, hasMore } =
-    useScrollableFeed();
-  const [panelView, setPanelView] = useState<'notifications' | 'preferences'>(
-    'preferences',
+  const { notifications, loading, loadMore, refresh, hasMore } = useFeed();
+  const [panelView, setPanelView] = useState<"notifications" | "preferences">(
+    "preferences",
   );
 
   const unreadCount = useUnreadCount();
 
-  const { preferences, supportedChannels } = usePreferences();
+  const { preferences, channels } = usePreferences();
 
-  const [message, setMessage] = useState('Testing...');
+  const [message, setMessage] = useState("Testing...");
   const userId = useCurrentUser();
   const setUserId = useSetCurrentUser();
-  const instance = useInstance();
+  const { markAsSeen, markAllAsRead, deleteAllNotifications } = useActions();
+  const { subscribe, clearWebPushSubscription } = useWebPush();
 
-  useEvent('notificationReceive', notification => {
+  useEvent("notificationReceive", (notification) => {
     notify(notification.notification);
   });
 
-  console.log('unread count is ', unreadCount, preferences, supportedChannels);
+  console.log("unread count is ", unreadCount, preferences, channels);
 
   return (
     <>
@@ -51,8 +52,8 @@ function App() {
       <div className="container">
         <div
           style={{
-            display: 'flex',
-            gap: '1rem',
+            display: "flex",
+            gap: "1rem",
           }}
         >
           <button className="p-2 hover:bg-slate-200" onClick={loadMore}>
@@ -63,20 +64,20 @@ function App() {
           </button>
           <button
             className="p-2 hover:bg-slate-200 ml-3"
-            onClick={instance.notification.markAllAsRead}
+            onClick={markAllAsRead}
           >
             markAllAsRead
           </button>
           <button
             className="p-2 hover:bg-slate-200 ml-3"
-            onClick={instance.notification.deleteAllNotifications}
+            onClick={deleteAllNotifications}
           >
             deleteAllNotifications
           </button>
           <button
             className="p-2 hover:bg-slate-200 ml-3"
             onClick={() => {
-              instance.webPush.subscribe();
+              subscribe();
             }}
           >
             Enable WebPush
@@ -84,7 +85,7 @@ function App() {
           <button
             className="p-2 hover:bg-slate-200 ml-3"
             onClick={() => {
-              instance.webPush.clearWebPushSubscription();
+              clearWebPushSubscription();
             }}
           >
             Clear WebPush
@@ -99,9 +100,7 @@ function App() {
           </button>
           <button
             className="p-2 hover:bg-slate-200 ml-3"
-            onClick={() =>
-              instance.notification.markAsSeen({ limit: 15, pageNo: 1 })
-            }
+            onClick={() => markAsSeen({ limit: 15, pageNo: 1 })}
           >
             Mark As Seen
           </button>
@@ -129,14 +128,14 @@ function App() {
                 className="p-1 mr-5 rounded outline-gray-400 bg-slate-200"
                 type="text"
                 placeholder="Enter message to send"
-                onChange={event => {
+                onChange={(event) => {
                   setMessage(event.target.value);
                 }}
               ></input>
               <select
                 className="p-1 mr-5 rounded outline-gray-400 bg-slate-200"
                 defaultValue={import.meta.env.VITE_USER_ID}
-                onChange={event => {
+                onChange={(event) => {
                   setUserId(event.target.value);
                 }}
               >
@@ -146,7 +145,7 @@ function App() {
             </li>
             <li>
               <Popper
-                renderButton={open => {
+                renderButton={(open) => {
                   return (
                     <>
                       <div className="flex">
@@ -157,44 +156,44 @@ function App() {
                       </div>
                       <ChevronDownIcon
                         className={clsx(
-                          !open && 'opacity-0',
-                          'size-5',
-                          open && 'rotate-180',
+                          !open && "opacity-0",
+                          "size-5",
+                          open && "rotate-180",
                         )}
                       />
                     </>
                   );
                 }}
               >
-                {open => {
+                {(open) => {
                   return (
                     <>
                       <div className="flex gap-3 text-sm justify-end">
                         <button
                           className={`border border-black rounded-lg p-2 ${
-                            panelView === 'notifications'
-                              ? 'bg-black text-white'
-                              : 'bg-white text-black'
+                            panelView === "notifications"
+                              ? "bg-black text-white"
+                              : "bg-white text-black"
                           }`}
-                          onClick={() => setPanelView('notifications')}
+                          onClick={() => setPanelView("notifications")}
                         >
                           Notifications
                         </button>
                         <button
                           className={`border border-black rounded-lg p-2 ${
-                            panelView === 'preferences'
-                              ? 'bg-black text-white'
-                              : 'bg-white text-black'
+                            panelView === "preferences"
+                              ? "bg-black text-white"
+                              : "bg-white text-black"
                           }`}
-                          onClick={() => setPanelView('preferences')}
+                          onClick={() => setPanelView("preferences")}
                         >
                           Preferences
                         </button>
                       </div>
 
-                      {panelView === 'preferences' ? (
+                      {panelView === "preferences" ? (
                         <div className="flex flex-col gap-4">
-                          {preferences?.categories?.map(categories => (
+                          {preferences?.categories?.map((categories) => (
                             <div
                               key={categories.name}
                               className="border border-black p-2 rounded-lg"
@@ -204,7 +203,7 @@ function App() {
                               </div>
 
                               <div className="flex flex-col gap-4">
-                                {categories.channels?.map(channel => (
+                                {categories.channels?.map((channel) => (
                                   <PreferenceChannels
                                     key={channel.id}
                                     categoryId={categories.id}

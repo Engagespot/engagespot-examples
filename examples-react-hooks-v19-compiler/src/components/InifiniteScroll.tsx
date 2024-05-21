@@ -1,9 +1,9 @@
-import { useActions, type useScrollableFeed } from '@engagespot/react-hooks';
+import { useActions, type useFeed } from '@engagespot/react-hooks';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { Dot } from '../icons/Dot';
 
-type ScrollableFeedProps = ReturnType<typeof useScrollableFeed>;
+type ScrollableFeedProps = ReturnType<typeof useFeed>;
 
 export const NotificationsInifiniteScroll = ({
   loadMore,
