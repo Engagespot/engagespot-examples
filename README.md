@@ -4,6 +4,6 @@
 
 ### [React Hooks Example (React 16)](https://githubbox.com/Engagespot/engagespot-examples/tree/main/examples-react-hooks-v16)
 
-### [React Hooks Example (React Native Compiler)](https://githubbox.com/Engagespot/engagespot-examples/tree/main/examples-react-hooks-react-native)
+### [React Hooks Example (React Native)](https://githubbox.com/Engagespot/engagespot-examples/tree/main/examples-react-react-native)
 
 ### [React Hooks Example (React 19 Compiler)](https://githubbox.com/Engagespot/engagespot-examples/tree/main/examples-react-hooks-v19)
