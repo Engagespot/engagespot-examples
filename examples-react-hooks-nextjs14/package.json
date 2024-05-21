@@ -34,7 +34,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@engagespot/react-hooks": "0.0.0-20240521051613",
+    "@engagespot/react-hooks": "0.0.0-20240521103049",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

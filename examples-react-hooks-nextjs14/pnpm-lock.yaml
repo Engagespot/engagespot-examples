@@ -77,8 +77,8 @@ dependencies:
 
 devDependencies:
   '@engagespot/react-hooks':
-    specifier: 0.0.0-20240521051613
-    version: 0.0.0-20240521051613(react-dom@18.3.1)(react@18.3.1)
+    specifier: 0.0.0-20240521103049
+    version: 0.0.0-20240521103049(react-dom@18.3.1)(react@18.3.1)
   '@types/node':
     specifier: ^20
     version: 20.12.12
@@ -116,18 +116,18 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  /@engagespot/api-client@0.0.0-20240521051613:
-    resolution: {integrity: sha512-GpYLCowfgMtr3ZRVhI/UA/LXL6Q8Dc54kZbP0C2MzKsfH7sqBnDczA7x6NG3uj0rlfS71XjRC0/N0bZK9tIw7A==}
+  /@engagespot/api-client@0.0.0-20240521103049:
+    resolution: {integrity: sha512-28G53bMk+IRUVHwZ8heRS+d0XIjirUmnk4ichmyoIEgRJlFqiYHvMNvQFLRilFIKmu9lFd4nWDjWbU7BPIpO5A==}
     dependencies:
-      '@engagespot/utils': 0.0.0-20240521051613
+      '@engagespot/utils': 0.0.0-20240521103049
       openapi-fetch: 0.9.7
     dev: true
 
-  /@engagespot/core@0.0.0-20240521051613:
-    resolution: {integrity: sha512-lmuTAJF/74ZOr3M6PZSgC6kZgHssDBQE38jKLlcpQEZWipimkDL8blBYyKtanm4lg2YO+MjeDpGLNPLwTXm39A==}
+  /@engagespot/core@0.0.0-20240521103049:
+    resolution: {integrity: sha512-3wNOJLgUp/CC1hd4HdABDLMg1z6tz2aRvr1hVCuEWOagQ87oXLxvntLsVvG0LC8pqwG4kwXegH3gGrfQFT8XVA==}
     dependencies:
-      '@engagespot/api-client': 0.0.0-20240521051613
-      '@engagespot/utils': 0.0.0-20240521051613
+      '@engagespot/api-client': 0.0.0-20240521103049
+      '@engagespot/utils': 0.0.0-20240521103049
       openapi-fetch: 0.9.7
       socket.io-client: 4.7.5
       subscribableevent: 1.0.1
@@ -137,13 +137,13 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@engagespot/react-hooks@0.0.0-20240521051613(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-A8B5DAgTcqbNebVMXoBuUoa/lTY6AXq7LzqKevAfHaCAIDzuZpmjRsILWNlubpME3rR0eaCnvC2f/ykA5EN4NQ==}
+  /@engagespot/react-hooks@0.0.0-20240521103049(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-24Bq6ugKRLHIZbC9ysUw7AVM5A1Z/As8IcPpkBjClPNDR/0ZvewgTThCon7eNicKRiQH8+joaK8WuPC3ye5M0A==}
     peerDependencies:
       react: '>=16.8.3'
     dependencies:
-      '@engagespot/store': 0.0.0-20240521051613
-      '@engagespot/utils': 0.0.0-20240521051613
+      '@engagespot/store': 0.0.0-20240521103049
+      '@engagespot/utils': 0.0.0-20240521103049
       react: 18.3.1
       react-use: 17.5.0(react-dom@18.3.1)(react@18.3.1)
       use-sync-external-store: 1.2.2(react@18.3.1)
@@ -154,12 +154,12 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@engagespot/store@0.0.0-20240521051613:
-    resolution: {integrity: sha512-5QXS9efbmYp5j6YuOxKk2S0yn3ay1nS16kFn3EXQUpfsJtwJQTsA6AdRHfLElx9nc+6Yrwms0iWlmp8uAee7Dg==}
+  /@engagespot/store@0.0.0-20240521103049:
+    resolution: {integrity: sha512-JoB3L8HOkf11Tm1Fr1A2PeWf5g/fXo2vj8qcdUvmA8J5lZsM2fbSrvlcgSrS5A3NJr9P3Uxdol5NeIIOXl/ziw==}
     dependencies:
-      '@engagespot/api-client': 0.0.0-20240521051613
-      '@engagespot/core': 0.0.0-20240521051613
-      '@engagespot/utils': 0.0.0-20240521051613
+      '@engagespot/api-client': 0.0.0-20240521103049
+      '@engagespot/core': 0.0.0-20240521103049
+      '@engagespot/utils': 0.0.0-20240521103049
       date-fns: 2.30.0
       subscribableevent: 1.0.1
     transitivePeerDependencies:
@@ -168,8 +168,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@engagespot/utils@0.0.0-20240521051613:
-    resolution: {integrity: sha512-PFiP/+xTMd0Up2Cz/UgZ767zNfjga2gJ1CeyusltBwyXe1raZ9DmCVNxluh4yn2FqyXxUOgMdNQ8+81ZLf+VNw==}
+  /@engagespot/utils@0.0.0-20240521103049:
+    resolution: {integrity: sha512-45ySShpPVzDNYhMXbC4X8CVS5UljXPAkMzY/6CxhIfugEYjiJBb0hkd5c6yhJOntW+qmmDEeebCJyfNFoxlljw==}
     dev: true
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.57.0):
