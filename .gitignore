@@ -1,5 +1,4 @@
-/**/*.d.ts
-/**/*.d.cts
-/**/*.js
 /**/*.tsbuildinfo
 /**/*.map
+/**/dist/
+/**/build/
