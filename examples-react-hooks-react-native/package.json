@@ -10,7 +10,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@engagespot/react-hooks": "0.0.0-20240516025200",
+    "@engagespot/react-hooks": "0.0.0-20240521051613",
     "expo": "~51.0.8",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",

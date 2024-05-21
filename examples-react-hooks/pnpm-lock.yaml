@@ -50,8 +50,8 @@ dependencies:
 
 devDependencies:
   '@engagespot/react-hooks':
-    specifier: 0.0.0-20240516025200
-    version: 0.0.0-20240516025200(nanostores@0.10.3)(react-dom@18.3.1)(react@18.3.1)
+    specifier: 0.0.0-20240521051613
+    version: 0.0.0-20240521051613(nanostores@0.10.3)(react-dom@18.3.1)(react@18.3.1)
   '@types/react':
     specifier: ^18.2.66
     version: 18.3.2
@@ -342,18 +342,18 @@ packages:
     dev: false
     optional: true
 
-  /@engagespot/api-client@0.0.0-20240516025200:
+  /@engagespot/api-client@0.0.0-20240521051613:
     resolution: {integrity: sha512-ucqTHQQgoGD2WoV1huSv7vh7YqWOGOCjYubQZBwIgCZ/XTOM6aBg8cU9R9teuLWVYTKBmfpQ2+9d7afP/0T0lg==}
     dependencies:
-      '@engagespot/utils': 0.0.0-20240516025200
+      '@engagespot/utils': 0.0.0-20240521051613
       openapi-fetch: 0.9.5
     dev: true
 
-  /@engagespot/core@0.0.0-20240516025200:
+  /@engagespot/core@0.0.0-20240521051613:
     resolution: {integrity: sha512-wWQg7aOGK8KiiTr0IUgMsc4s1oW+3HjmFw4kh2LqYu12aI1lYAkFswuW1wJ2zQCLNPMVvKxOwl4G1Se1de1hjA==}
     dependencies:
-      '@engagespot/api-client': 0.0.0-20240516025200
-      '@engagespot/utils': 0.0.0-20240516025200
+      '@engagespot/api-client': 0.0.0-20240521051613
+      '@engagespot/utils': 0.0.0-20240521051613
       dayjs: 1.11.11
       openapi-fetch: 0.9.5
       socket.io-client: 4.7.5
@@ -364,13 +364,13 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@engagespot/react-hooks@0.0.0-20240516025200(nanostores@0.10.3)(react-dom@18.3.1)(react@18.3.1):
+  /@engagespot/react-hooks@0.0.0-20240521051613(nanostores@0.10.3)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-ooV/BUBO/pzavzCg4XdOfF3FoZ2931RfdnQc+h5xpkLphRN0L+3IexJEPzehI2FcJ+z2RRJG4y8TeBqbjp3v6g==}
     peerDependencies:
       react: '>=16.8.3'
     dependencies:
-      '@engagespot/store': 0.0.0-20240516025200
-      '@engagespot/utils': 0.0.0-20240516025200
+      '@engagespot/store': 0.0.0-20240521051613
+      '@engagespot/utils': 0.0.0-20240521051613
       '@nanostores/react': 0.7.2(nanostores@0.10.3)(react@18.3.1)
       react: 18.3.1
       react-use: 17.5.0(react-dom@18.3.1)(react@18.3.1)
@@ -383,12 +383,12 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@engagespot/store@0.0.0-20240516025200:
+  /@engagespot/store@0.0.0-20240521051613:
     resolution: {integrity: sha512-8jCRDfGW2Jh7kpHI1C84//1Bt0bgWQ2zX8/xMAZ8octAqJp54XrSJsNAG91IMkQuMIE6hAoXmd0KTEgMQI2Bng==}
     dependencies:
-      '@engagespot/api-client': 0.0.0-20240516025200
-      '@engagespot/core': 0.0.0-20240516025200
-      '@engagespot/utils': 0.0.0-20240516025200
+      '@engagespot/api-client': 0.0.0-20240521051613
+      '@engagespot/core': 0.0.0-20240521051613
+      '@engagespot/utils': 0.0.0-20240521051613
       '@nanostores/query': 0.3.0(nanostores@0.10.3)
       nanostores: 0.10.3
       subscribableevent: 1.0.1
@@ -398,7 +398,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@engagespot/utils@0.0.0-20240516025200:
+  /@engagespot/utils@0.0.0-20240521051613:
     resolution: {integrity: sha512-YHSoGVmiOFo+y8Ex5sUMx4isL5X0WqAuSMeg9UNbUjCUF1YJrkTqTd/ys08ciZtJbOcZhD0nNpyzcOsstJp6qA==}
     dev: true
 
